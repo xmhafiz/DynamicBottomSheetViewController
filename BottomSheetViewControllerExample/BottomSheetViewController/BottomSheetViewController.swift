@@ -51,7 +51,7 @@ class BottomSheetViewController: UIViewController {
     /// minimum drag vertically that enable bottom sheet to dismiss
     private let minDismissiblePanHeight: CGFloat = 20
 
-    private var minTopSpacing: CGFloat = 240
+    private var minTopSpacing: CGFloat = 80
     
     // MARK: - View Setup
     override func viewDidLoad() {
