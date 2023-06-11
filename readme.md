@@ -39,7 +39,6 @@ class ExampleBottomSheetViewController: BottomSheetViewController {
     // add those into stack view
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
     }
     
@@ -55,7 +54,7 @@ class ExampleBottomSheetViewController: BottomSheetViewController {
 }
 ```
 
-3. Present the bottom sheet view controller using your preferred presentation method (e.g., `present(_:animated:completion:)`).
+3. Present the bottom sheet view controller provided `presentBottomSheet(viewController:)` method. You may custom your own and using transition delegate.
 
 ```swift
 let vc = ExampleBottomSheetViewController()
@@ -66,7 +65,7 @@ let vc = ExampleBottomSheetViewController()
 
 You can customize the Reusable Bottom Sheet View Controller according to your app's specific requirements. Here are a few possible customizations:
 
-- Modify the appearance and layout of the top view and content view.
+- Modify the appearance and layout of the top view and content view in the main class called `BottomSheetViewController`.
 - Customize the presentation and dismissal animations.
 - Add additional subviews and functionality to the content view.
 
