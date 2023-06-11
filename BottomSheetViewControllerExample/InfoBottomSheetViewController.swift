@@ -47,7 +47,7 @@ class InfoBottomSheetViewController: BottomSheetViewController {
         return view
     }()
 
-    lazy var dismissButton: UIButton = {
+    private lazy var dismissButton: UIButton = {
         let button = UIButton()
         button.setTitle("Dismiss", for: .normal)
         button.backgroundColor = .systemBlue
@@ -59,7 +59,7 @@ class InfoBottomSheetViewController: BottomSheetViewController {
         return button
     }()
 
-    lazy var contentStackView: UIStackView = {
+    private lazy var contentStackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
@@ -82,7 +82,7 @@ class InfoBottomSheetViewController: BottomSheetViewController {
         setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         contentStackView.addArrangedSubview(topLabelStackView)
         contentStackView.addArrangedSubview(headerImageView)
         contentStackView.addArrangedSubview(bodyLabel)
@@ -93,7 +93,7 @@ class InfoBottomSheetViewController: BottomSheetViewController {
         self.setContent(content: contentStackView)
     }
 
-    @objc func handleDismissButton() {
+    @objc private func handleDismissButton() {
         self.dismissBottomSheet()
     }
 }

@@ -8,9 +8,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    let settings = PageSettings()
+    private let settings = PageSettings()
 
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 16
@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
         return view
     }()
 
-    lazy var showBottomSheetButton: UIButton = {
+    private lazy var showBottomSheetButton: UIButton = {
         let button = UIButton()
         button.setTitle("Show Bottom Sheet", for: .normal)
         button.backgroundColor = .systemBlue
@@ -29,37 +29,37 @@ class HomeViewController: UIViewController {
         return button
     }()
 
-    lazy var longTextSwitch: UISwitch = {
+    private lazy var longTextSwitch: UISwitch = {
         let view = UISwitch()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    lazy var longTextLabel: UILabel = {
+    private lazy var longTextLabel: UILabel = {
         let label = UILabel()
         label.text = "Long text"
         return label
     }()
 
-    lazy var longTextOptionStackView: UIStackView = {
+    private lazy var longTextOptionStackView: UIStackView = {
         let view = UIStackView()
         view.spacing = 16
         return view
     }()
 
-    lazy var hasImageSwitch: UISwitch = {
+    private lazy var hasImageSwitch: UISwitch = {
         let view = UISwitch()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var hasImageLabel: UILabel = {
+    private lazy var hasImageLabel: UILabel = {
         let label = UILabel()
         label.text = "Has Image"
         return label
     }()
     
-    lazy var hasImageOptionStackView: UIStackView = {
+    private lazy var hasImageOptionStackView: UIStackView = {
         let view = UIStackView()
         view.spacing = 16
         return view
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
         setupAction()
     }
 
-    func setupView() {
+    private func setupView() {
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
@@ -90,21 +90,21 @@ class HomeViewController: UIViewController {
         longTextOptionStackView.addArrangedSubview(longTextLabel)
     }
 
-    func setupAction() {
+    private func setupAction() {
         longTextSwitch.addTarget(self, action: #selector(handleLongTextSwitch), for: .valueChanged)
         hasImageSwitch.addTarget(self, action: #selector(handleHasImageSwitch), for: .valueChanged)
         showBottomSheetButton.addTarget(self, action: #selector(handleButtonTap), for: .touchUpInside)
     }
 
-    @objc func handleLongTextSwitch() {
+    @objc private func handleLongTextSwitch() {
         settings.longText = longTextSwitch.isOn
     }
 
-    @objc func handleHasImageSwitch() {
+    @objc private func handleHasImageSwitch() {
         settings.hasImage = hasImageSwitch.isOn
     }
 
-    @objc func handleButtonTap() {
+    @objc private func handleButtonTap() {
         let vc = InfoBottomSheetViewController(settings: settings)
         presentBottomSheet(viewController: vc)
     }
