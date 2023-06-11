@@ -9,21 +9,24 @@ import UIKit
 
 class BottomSheetViewController: UIViewController {
     // MARK: - UI
+    /// Main bottom sheet container view
     private lazy var mainContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
         return view
     }()
-
+    
+    /// View to to hold dynamic content
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    /// Top bar view that draggable to dismiss
     private lazy var topBarView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray.withAlphaComponent(0.1)
@@ -31,6 +34,8 @@ class BottomSheetViewController: UIViewController {
         return view
     }()
     
+    
+    /// Top view bar
     private lazy var barLineView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
@@ -38,7 +43,8 @@ class BottomSheetViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
+    /// Dimmed background view
     private lazy var dimmedView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -46,11 +52,14 @@ class BottomSheetViewController: UIViewController {
         view.alpha = 0
         return view
     }()
+    
     // MARK: - Properties
+    
+    /// Maximum alpha for dimmed view
     private let maxDimmedAlpha: CGFloat = 0.8
-    /// minimum drag vertically that enable bottom sheet to dismiss
+    /// Minimum drag vertically that enable bottom sheet to dismiss
     private let minDismissiblePanHeight: CGFloat = 20
-
+    /// Minimum spacing between the top edge and bottom sheet
     private var minTopSpacing: CGFloat = 80
     
     // MARK: - View Setup
@@ -69,7 +78,7 @@ class BottomSheetViewController: UIViewController {
         view.backgroundColor = .clear
         view.addSubview(dimmedView)
         NSLayoutConstraint.activate([
-            // set dimmedView edges to superview
+            // Set dimmedView edges to superview
             dimmedView.topAnchor.constraint(equalTo: view.topAnchor),
             dimmedView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             dimmedView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -85,6 +94,7 @@ class BottomSheetViewController: UIViewController {
             mainContainerView.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: minTopSpacing)
         ])
         
+        // Top draggable bar view
         mainContainerView.addSubview(topBarView)
         NSLayoutConstraint.activate([
             topBarView.topAnchor.constraint(equalTo: mainContainerView.topAnchor),
@@ -92,8 +102,6 @@ class BottomSheetViewController: UIViewController {
             topBarView.trailingAnchor.constraint(equalTo: mainContainerView.trailingAnchor),
             topBarView.heightAnchor.constraint(equalToConstant: 54)
         ])
-    
-        // Handle View
         topBarView.addSubview(barLineView)
         NSLayoutConstraint.activate([
             barLineView.centerXAnchor.constraint(equalTo: topBarView.centerXAnchor),
@@ -141,7 +149,7 @@ class BottomSheetViewController: UIViewController {
             // This state will occur when user is dragging
             self.mainContainerView.frame.origin.y = currentY + pannedHeight
         case .ended:
-            // handle when user stop dragging
+            // When user stop dragging
             // if fulfil the condition dismiss it, else move to original position
             if pannedHeight >= minDismissiblePanHeight {
                 dismissBottomSheet()

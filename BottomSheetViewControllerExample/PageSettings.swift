@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PageSettings {
+struct PageSettings {
     var longText = false
     var hasImage = false
 }

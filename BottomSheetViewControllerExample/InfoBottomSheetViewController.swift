@@ -8,7 +8,10 @@
 import UIKit
 
 class InfoBottomSheetViewController: BottomSheetViewController {
+    // MARK: - Properties
     var settings = PageSettings()
+    
+    // MARK: - UI
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 24)
@@ -30,6 +33,7 @@ class InfoBottomSheetViewController: BottomSheetViewController {
         view.spacing = 4
         view.addArrangedSubview(titleLabel)
         view.addArrangedSubview(descriptionLabel)
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
@@ -83,6 +87,7 @@ class InfoBottomSheetViewController: BottomSheetViewController {
     }
     
     private func setupView() {
+        // Main content to be added in bottom sheet
         contentStackView.addArrangedSubview(topLabelStackView)
         contentStackView.addArrangedSubview(headerImageView)
         contentStackView.addArrangedSubview(bodyLabel)
@@ -90,6 +95,7 @@ class InfoBottomSheetViewController: BottomSheetViewController {
         bodyLabel.text = settings.longText ? MockData.longText : MockData.shortText
         headerImageView.isHidden = !settings.hasImage
         
+        // Call bottom sheet function to set the intended content
         self.setContent(content: contentStackView)
     }
 

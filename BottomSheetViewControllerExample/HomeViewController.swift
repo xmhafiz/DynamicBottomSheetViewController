@@ -8,8 +8,10 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    private let settings = PageSettings()
+    // MARK: - Properties
+    private var settings = PageSettings()
 
+    // MARK: - UI
     private lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
@@ -31,7 +33,6 @@ class HomeViewController: UIViewController {
 
     private lazy var longTextSwitch: UISwitch = {
         let view = UISwitch()
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
@@ -49,7 +50,6 @@ class HomeViewController: UIViewController {
 
     private lazy var hasImageSwitch: UISwitch = {
         let view = UISwitch()
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -61,10 +61,12 @@ class HomeViewController: UIViewController {
     
     private lazy var hasImageOptionStackView: UIStackView = {
         let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.spacing = 16
         return view
     }()
 
+    // MARK: - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -90,6 +92,7 @@ class HomeViewController: UIViewController {
         longTextOptionStackView.addArrangedSubview(longTextLabel)
     }
 
+    // MARK: - Actions
     private func setupAction() {
         longTextSwitch.addTarget(self, action: #selector(handleLongTextSwitch), for: .valueChanged)
         hasImageSwitch.addTarget(self, action: #selector(handleHasImageSwitch), for: .valueChanged)
