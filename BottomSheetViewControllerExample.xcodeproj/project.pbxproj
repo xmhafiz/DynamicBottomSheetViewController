@@ -14,7 +14,7 @@
 		8619D2652A2C751C00AB91A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8619D2642A2C751C00AB91A8 /* Assets.xcassets */; };
 		8619D2682A2C751C00AB91A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8619D2662A2C751C00AB91A8 /* LaunchScreen.storyboard */; };
 		8619D2712A2C764300AB91A8 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619D2702A2C764300AB91A8 /* BottomSheetViewController.swift */; };
-		8619D2732A2CA0E800AB91A8 /* InfoBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619D2722A2CA0E800AB91A8 /* InfoBottomSheetViewController.swift */; };
+		8619D2732A2CA0E800AB91A8 /* DemoBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8619D2722A2CA0E800AB91A8 /* DemoBottomSheetViewController.swift */; };
 		86C8094B2A30D4F9008204D8 /* PageSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C8094A2A30D4F9008204D8 /* PageSettings.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		8619D2672A2C751C00AB91A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8619D2692A2C751C00AB91A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8619D2702A2C764300AB91A8 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
-		8619D2722A2CA0E800AB91A8 /* InfoBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBottomSheetViewController.swift; sourceTree = "<group>"; };
+		8619D2722A2CA0E800AB91A8 /* DemoBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBottomSheetViewController.swift; sourceTree = "<group>"; };
 		86C8094A2A30D4F9008204D8 /* PageSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +67,7 @@
 				8619D25D2A2C751B00AB91A8 /* SceneDelegate.swift */,
 				8619D25F2A2C751B00AB91A8 /* HomeViewController.swift */,
 				86C8094A2A30D4F9008204D8 /* PageSettings.swift */,
-				8619D2722A2CA0E800AB91A8 /* InfoBottomSheetViewController.swift */,
+				8619D2722A2CA0E800AB91A8 /* DemoBottomSheetViewController.swift */,
 				8619D2612A2C751B00AB91A8 /* Main.storyboard */,
 				8619D2642A2C751C00AB91A8 /* Assets.xcassets */,
 				8619D2662A2C751C00AB91A8 /* LaunchScreen.storyboard */,
@@ -156,7 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86C8094B2A30D4F9008204D8 /* PageSettings.swift in Sources */,
-				8619D2732A2CA0E800AB91A8 /* InfoBottomSheetViewController.swift in Sources */,
+				8619D2732A2CA0E800AB91A8 /* DemoBottomSheetViewController.swift in Sources */,
 				8619D2602A2C751B00AB91A8 /* HomeViewController.swift in Sources */,
 				8619D2712A2C764300AB91A8 /* BottomSheetViewController.swift in Sources */,
 				8619D25C2A2C751B00AB91A8 /* AppDelegate.swift in Sources */,

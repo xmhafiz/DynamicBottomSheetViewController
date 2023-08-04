@@ -108,7 +108,7 @@ class HomeViewController: UIViewController {
     }
 
     @objc private func handleButtonTap() {
-        let vc = InfoBottomSheetViewController(settings: settings)
+        let vc = DemoBottomSheetViewController(settings: settings)
         presentBottomSheet(viewController: vc)
     }
 }

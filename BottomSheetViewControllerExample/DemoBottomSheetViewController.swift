@@ -1,5 +1,5 @@
 //
-//  InfoBottomSheetViewController.swift
+//  DemoBottomSheetViewController.swift
 //  BottomSheetViewControllerExample
 //
 //  Created by Mohd Hafiz on 04/06/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfoBottomSheetViewController: BottomSheetViewController {
+class DemoBottomSheetViewController: BottomSheetViewController {
     // MARK: - Properties
     var settings = PageSettings()
     
